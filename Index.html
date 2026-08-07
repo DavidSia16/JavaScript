@@ -4,128 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora de Orçamento</title>
-    <style>
-        /* Reset básico e fonte */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-body {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-}
-
-/* Card Principal */
-.card {
-    background: #ffffff;
-    padding: 30px 40px;
-    border-radius: 16px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-    text-align: center;
-    max-width: 400px;
-    width: 100%;
-}
-
-h1 {
-    color: #333;
-    font-size: 1.8rem;
-    margin-bottom: 20px;
-}
-
-/* Botão interativo */
-button {
-    background: #667eea;
-    color: #fff;
-    border: none;
-    padding: 12px 24px;
-    font-size: 1rem;
-    font-weight: bold;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background 0.3s ease, transform 0.1s ease;
-    width: 100%;
-}
-
-button:hover {
-    background: #5a67d8;
-}
-
-button:active {
-    transform: scale(0.98);
-}
-
-/* Container do Resultado */
-#resultado {
-    margin-top: 25px;
-    text-align: left;
-    border-top: 1px solid #eee;
-    padding-top: 20px;
-}
-
-#resultado h2 {
-    font-size: 1.3rem;
-    color: #2d3748;
-    margin-bottom: 12px;
-}
-
-#resultado p {
-    font-size: 1rem;
-    color: #4a5568;
-    margin: 8px 0;
-    line-height: 1.4;
-}
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+   
     <div class="card">
         <h1>Orçamento Pessoal</h1>
         <button onclick="calcularOrçamento()">Calcular Orçamento</button>
         <div id="resultado"></div>
     </div>
-    <script >
-        function calcularOrçamento() {
-    // 1. Entrada e tratamento de dados do usuário
-    let nome = window.prompt("Qual é o seu nome?");
-    if (!nome) return; // Cancela se o usuário fechar o prompt
-
-    let salarioInput = window.prompt("Informe o seu salário mensal (R$):");
-    let despesasInput = window.prompt("Informe o total das suas despesas mensais (R$):");
-
-    // 2. Conversão de String para Número
-    let salario = Number(salarioInput.replace(',', '.'));
-    let despesas = Number(despesasInput.replace(',', '.'));
-
-    // Validação de entrada
-    if (isNaN(salario) || isNaN(despesas)) {
-        alert("Por favor, digite valores numéricos válidos.");
-        return;
-    }
-
-    // 3. Processamento de dados
-    let saldo = salario - despesas;
-    let porcentagemGasta = (despesas / salario) * 100;
-
-    // 4. Formatação dos dados em Moeda (BRL)
-    let salarioFormatado = salario.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-    let despesasFormatadas = despesas.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-    let saldoFormatado = saldo.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-
-    // 5. Exibição na tela
-    let divResultado = document.getElementById("resultado");
-    divResultado.innerHTML = `
-        <h2>Olá, <strong>${nome.toUpperCase()}</strong>!</h2>
-        <p>💰 **Salário:** ${salarioFormatado}</p>
-        <p>💸 **Despesas:** ${despesasFormatadas} (${porcentagemGasta.toFixed(1)}% da renda)</p>
-        <p>📊 **Saldo Restante:** <strong style="color: ${saldo >= 0 ? 'green' : 'red'};">${saldoFormatado}</strong></p>
-    `;
-}
-    </script>
+     <script  src="script.js"> </script>
 </body>
 </html>
