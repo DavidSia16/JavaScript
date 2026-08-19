@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Estacionamento</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h2>Estacionamento - Entrada de Veículos</h2>
+
+    
+    <div class="campo">
+        <label for="placa">Placa:</label>
+        <input type="text" id="placa" placeholder="EX: ABC-1234">
+    </div>
+
+    <div class="campo">
+        <label for="cor">Cor:</label>
+        <input type="text" id="cor" placeholder="EX: Vermelho">
+    </div>
+
+    <div class="campo">
+        <label for="marca">Marca/Modelo:</label>
+        <input type="text" id="marca" placeholder="EX: Fiat Uno">
+    </div>
+
+    <button onclick="adicionarCarro()">Estacionar Veículo</button>
+
+    <ul id="listaEstacionamento"></ul>
+    <script src="script.js"></script>
+</body>
+</html>

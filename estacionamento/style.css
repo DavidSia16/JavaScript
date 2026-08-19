@@ -1,0 +1,227 @@
+:root {
+  --bg-color: #0b0f19;
+  --card-bg: rgba(18, 26, 43, 0.75);
+  --neon-cyan: #00f3ff;
+  --neon-green: #00ff88;
+  --text-main: #e0e6ed;
+  --text-dim: #8a99ad;
+  --border-color: rgba(0, 243, 255, 0.2);
+}
+
+body {
+  background-color: var(--bg-color);
+  background-image: 
+    radial-gradient(circle at 15% 15%, rgba(0, 243, 255, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 85% 85%, rgba(0, 255, 136, 0.05) 0%, transparent 40%);
+  font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+  color: var(--text-main);
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 30px;
+  border-radius: 16px;
+  background-clip: padding-box;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.8), 0 0 15px rgba(0, 243, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+h2 {
+  color: #ffffff;
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 8px;
+  margin-top: 25px;
+  text-shadow: 0 0 8px rgba(0, 243, 255, 0.4);
+}
+
+.campo { 
+  margin-bottom: 18px; 
+}
+
+label { 
+  display: block; 
+  margin-bottom: 8px; 
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--neon-cyan);
+}
+
+input { 
+  width: 100%;
+  padding: 12px 16px; 
+  box-sizing: border-box;
+  background-color: rgba(5, 9, 17, 0.8);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+input:focus {
+  border-color: var(--neon-cyan);
+  box-shadow: 0 0 12px rgba(0, 243, 255, 0.35);
+  background-color: rgba(10, 18, 32, 0.9);
+}
+
+button { 
+  width: 100%;
+  background: linear-gradient(135deg, #00c853, var(--neon-green)); 
+  color: #000;
+  font-weight: 700;
+  border: none;
+  padding: 14px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem; 
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-top: 15px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(0, 255, 136, 0.3);
+}
+
+button:hover { 
+  background: linear-gradient(135deg, var(--neon-green), #00f3ff);
+  box-shadow: 0 0 25px rgba(0, 255, 136, 0.6);
+  transform: translateY(-2px);
+}
+
+ul { 
+  list-style-type: none; 
+  padding: 0; 
+  margin-top: 15px;
+}
+
+li { 
+  background: rgba(15, 23, 42, 0.6);
+  color: var(--text-main);
+  margin: 10px 0; 
+  padding: 14px 18px; 
+  border-radius: 6px;
+  border-left: 4px solid var(--neon-cyan);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease;
+}
+
+li:hover {
+  transform: translateX(4px);
+  border-left-color: var(--neon-green);
+}
+
+/* Transforma a lista de vagas em um grid futurista */
+ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+li {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Card do Veículo */
+.card-veiculo {
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid rgba(0, 243, 255, 0.25);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.6), 0 0 10px rgba(0, 243, 255, 0.1);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  margin-top: 5%;
+}
+
+.card-veiculo:hover {
+  transform: translateY(-5px);
+  border-color: var(--neon-cyan, #00f3ff);
+  box-shadow: 0 0 20px rgba(0, 243, 255, 0.3);
+}
+
+/* Área da Imagem */
+.card-imagem {
+  width: 100%;
+  height: 130px;
+  background-color: rgba(5, 9, 17, 0.9);
+  border-bottom: 1px solid rgba(0, 243, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.card-imagem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.card-veiculo:hover .card-imagem img {
+  transform: scale(1.05);
+}
+
+/* Informações do Veículo */
+.card-info {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.card-info h3 {
+  margin: 0 0 6px 0;
+  color: #fff;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  text-shadow: 0 0 5px rgba(0, 243, 255, 0.5);
+}
+
+.card-info p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #8a99ad;
+}
+
+.card-info p strong {
+  color: #00f3ff;
+}
+
+/* Botão de Saída / Ação interna do Card */
+.btn-remover {
+  margin-top: 10px;
+  background: rgba(255, 0, 85, 0.2);
+  color: #ff0055;
+  border: 1px solid #ff0055;
+  padding: 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  box-shadow: none;
+}
+
+.btn-remover:hover {
+  background: #ff0055;
+  color: #fff;
+  box-shadow: 0 0 12px rgba(255, 0, 85, 0.6);
+  transform: none;
+}
