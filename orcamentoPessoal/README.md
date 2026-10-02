@@ -30,8 +30,3 @@ O objetivo principal deste repositório foi aplicar conceitos essenciais de mani
 
 ---
 
-## 🚀 Como Executar o Projeto
-
-1. Clone este repositório:
-   ```bash
-   git clone [https://github.com/SEU-USUARIO/SEU-REPOSITORIO.git](https://github.com/SEU-USUARIO/SEU-REPOSITORIO.git)
